@@ -1,0 +1,65 @@
+##############################
+# Maven Build Folders
+##############################
+target/
+test-output/
+surefire-reports/
+failsafe-reports/
+
+##############################
+# IDE Files (Eclipse, IntelliJ, VS Code)
+##############################
+# IntelliJ
+.idea/
+*.iml
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+##############################
+# OS Files
+##############################
+.DS_Store
+Thumbs.db
+
+##############################
+# Java / Compiled
+##############################
+*.class
+
+##############################
+# Logs
+##############################
+*.log
+
+##############################
+# Reports & Temporary Files
+##############################
+extent-report/
+reports/
+*.html
+*.json
+
+##############################
+# Screenshots (ignore images only)
+##############################
+resources/screenshots/*.png
+resources/screenshots/*.jpg
+resources/screenshots/*.jpeg
+
+# Keep the folder
+!resources/screenshots/
+!.gitkeep
+
+##############################
+# Other auto-generated files
+##############################
+*.tmp
+*.cache
+*.swp
