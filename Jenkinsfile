@@ -2,33 +2,31 @@ pipeline {
     agent any
 
     tools {
+        jdk 'JDK'
         maven 'Maven'
+        git 'Default'
     }
 
     stages {
 
         stage('Checkout') {
             steps {
-                checkout scm
+                git branch: 'main',
+                    url: 'https://github.com/adityaa-more/testffc-automation'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh "mvn clean test"
+                bat 'mvn clean test'
             }
         }
 
-        stage('Publish TestNG Reports') {
-            steps {
-                junit 'target/surefire-reports/*.xml'
-            }
-        }
     }
 
     post {
         always {
-            archiveArtifacts artifacts: 'target/surefire-reports/**', fingerprint: true
+            archiveArtifacts artifacts: 'test-output/**', fingerprint: true
         }
     }
 }
